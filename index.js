@@ -7,9 +7,9 @@ app.use(express.json());
 app.use(cors());
 
 // Rota de exemplo
-const motivosHandlers = require("./api/motivosGet");
-app.get('/motivos', motivosHandlers.getHandler);
-app.post('/motivos', motivosHandlers.postHandler);
+const motivosController = require("./api/motivosController");
+app.get('/motivos', motivosController.getHandler);
+app.post('/motivos', motivosController.postHandler);
 
 // Iniciar o servidor
 app.listen(port, () => {
